@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../third_party_pack/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <title>md5加密</title>
+    <style>
+    body{
+        background:linear-gradient(40deg,black,gray)
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top: 40px;">
+        <div class="jumbotron" style="
+        background:linear-gradient(45deg,rgb(74, 190, 211),rgb(175, 248, 248),rgb(74, 190, 211));
+        ">
+            <h1>MD5加密</h1>
+            <p style="
+            color: #fff;
+            background:linear-gradient(35deg,rgb(68, 96, 156),rgb(58, 58, 58,0.64));
+            padding:14px;
+            border-radius:14px;
+            ">MD5信息摘要算法（英语：MD5 Message-Digest Algorithm），一种被广泛使用的密码散列函数，可以产生出一个128位（16字节）的散列值（hash
+                value），用于确保信息传输完整一致。MD5由美国密码学家罗纳德·李维斯特（Ronald Linn Rivest）设计，于1992年公开，用以取代MD4算法。这套算法的程序在 RFC 1321
+                标准中被加以规范。1996年后该算法被证实存在弱点，可以被加以破解，对于需要高度安全性的数据，专家一般建议改用其他算法，如SHA-2。2004年，证实MD5算法无法防止碰撞（collision），因此不适用于安全性认证，如SSL公开密钥认证或是数字签名等用途。
+            </p>
+        </div>
+        <div style="float: left;">
+            <button type="button" class="btn btn-success" href=" ###" id="start">MD5加密</button>
+            <input type="password" name="" id="md5" value="" />
+        </div>
+        <textarea name="" id="end" cols="30" rows="10" style="float: left;margin-left: 40px;"></textarea>
+
+    </div>
+    <hr>
+    <script src="./jquery-3.3.1.js"></script>
+    <script src="./md5.js"></script>
+    <script>
+        $('#start').click(function () {
+            md5();
+        });
+
+        function md5() {
+            var beforemd5 = $("#md5").val();
+            var aftermd5 = $.md5(beforemd5);
+            $('#end').val('加密前：' + beforemd5 + '\n加密后：' + aftermd5);
+        }
+    </script>
+</body>
+
+
+</html>
